@@ -28,6 +28,15 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="jasmine\SpecRunner.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="math.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="solver.js" />
     <Content Include="jasmine\lib\jasmine-3.5.0\boot.js" />
     <Content Include="jasmine\lib\jasmine-3.5.0\jasmine-html.js" />
@@ -37,6 +46,9 @@
     <Content Include="jasmine\MIT.LICENSE" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="style.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="tests\test_solver.js">
       <SubType>Code</SubType>
     </Content>
