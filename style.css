@@ -20,7 +20,12 @@
 #errorField {
     color: red;
 }
+
 #matrixTable input {
     width: 70px;
     height: 40px;
 }
+
+/*.xPosition {*/
+    /*margin-right: 20px;
+}*/
