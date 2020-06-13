@@ -31,7 +31,7 @@
     <Content Include="index.html">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="jasmine\SpecRunner.html">
+    <Content Include="tests\SpecRunner.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="math.js">

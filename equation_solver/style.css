@@ -1,0 +1,26 @@
+* {
+    font-size: 30px;
+}
+
+.floatField {
+    width: 100px;
+}
+
+.input {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+.input li {
+    list-style: none;
+    margin-bottom: 7px; 
+}
+
+#errorField {
+    color: red;
+}
+#matrixTable input {
+    width: 70px;
+    height: 40px;
+}
