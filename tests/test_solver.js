@@ -19,7 +19,7 @@ describe("solveIteratively", function () {
                     [0.9, 2.5, 1.3, 32.1, -49.72]
                 ]);
             var eps = 0.001;
-            var expected = math.matrix([ [0.7999], [0.9999], [1.1999], [1.3999] ]);
+            var expected = math.matrix([ [0.8], [1], [1.2], [1.4] ]);
 
             test(coefficientMatrix, eps, expected);
         });

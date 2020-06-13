@@ -22,7 +22,7 @@ function solveIteratively(coefficientMatrix, eps, maxIterations = 10000) {
     coefficientMatrix = coefficientMatrix.subset(exceptLastColumnIndex);
 
     const beta = math.max(math.abs(coefficientMatrix));
-    eps = (1 - beta) / beta * eps;
+    const betaEps = (1 - beta) / beta * eps;
     var x = freeCoefficients;
     var status = "unsolved";
     for (let i = 0; i < maxIterations; i++) {
@@ -31,11 +31,22 @@ function solveIteratively(coefficientMatrix, eps, maxIterations = 10000) {
 
         const diff = math.max(math.abs(math.subtract(x, previousX)));
 
-        if (diff < eps) {
+        if (diff < betaEps) {
             status = "solved";
             break;
         }
     }
-
+    // из-за особенностей работы функции subset в библиотеке math.js, 
+    // в переменной x окажется число, если параметр coefficientMatrix был размерности [1, 1]
+    x = typeof x == "number" ? math.matrix([[x]]) : x;
     return { status: status, x: x };
+}
+
+function toIntPrecision(floatPrecision) {
+    let intPrecision = 0;
+    while (floatPrecision < 1) {
+        floatPrecision *= 10;
+        intPrecision++;
+    }
+    return intPrecision;
 }
