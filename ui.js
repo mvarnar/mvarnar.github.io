@@ -47,7 +47,7 @@ function validateNumber(number) {
     }
 }
 
-function buildMatrixTable(nVariables, table) {
+function buildMatrixTable(nVariables, table, matrixToInterpolate=null) {
     nVariables = parseInt(nVariables);
     while (table.firstChild) {
         table.firstChild.remove();
@@ -55,7 +55,8 @@ function buildMatrixTable(nVariables, table) {
     for (let nRow = 0; nRow < nVariables; nRow++) {
         const tr = document.createElement("tr");
         for (let nColumn = 0; nColumn < nVariables + 1; nColumn++) {
-            const cell = generateCell(nColumn, nColumn === 0, nColumn === nVariables);
+            const value = matrixToInterpolate !== null ? matrixToInterpolate[nRow][nColumn] : null;
+            const cell = generateCell(nColumn, nColumn === 0, nColumn === nVariables, value);
             const td = document.createElement("td");
             td.appendChild(cell);
             tr.appendChild(td);
@@ -64,10 +65,13 @@ function buildMatrixTable(nVariables, table) {
     }
 }
 
-function generateCell(nColumn, isFirst, isLast) {
+function generateCell(nColumn, isFirst, isLast, value=null) {
     const inputField = document.createElement("input");
     inputField.type = "text";
     inputField.class = "coefficientField";
+    if (value !== null) {
+        inputField.value = value;
+    }
 
     const cell = document.createElement("span");
     if (!isFirst) {
