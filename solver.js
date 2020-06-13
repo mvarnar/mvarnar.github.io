@@ -41,12 +41,3 @@ function solveIteratively(coefficientMatrix, eps, maxIterations = 10000) {
     x = typeof x == "number" ? math.matrix([[x]]) : x;
     return { status: status, x: x };
 }
-
-function toIntPrecision(floatPrecision) {
-    let intPrecision = 0;
-    while (floatPrecision < 1) {
-        floatPrecision *= 10;
-        intPrecision++;
-    }
-    return intPrecision;
-}
