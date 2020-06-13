@@ -47,7 +47,8 @@ function validateNumber(number) {
     }
 }
 
-function buildMatrixTable(nVariables, table, matrixToInterpolate=null) {
+function buildMatrixTable(nVariables, table, matrixToInterpolate = null) {
+    clearOutput();
     nVariables = parseInt(nVariables);
     while (table.firstChild) {
         table.firstChild.remove();
