@@ -1,8 +1,4 @@
 ﻿<!DOCTYPE html>
-<!-- TODO
-Заполнить значением по-умолчанию
-Информация о создателе
--->
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,7 +11,9 @@
     <script src="ui.js"></script>
 </head>
 <body>
-    <h1>  </h1>
+    <h1> Решение систем линейных уравнений методом итераций </h1>
+    <h2>Работу выполнил Тармин М.А, МПЗ-201</h2>
+
     <ul class="input">
         <label for="nVariables">Количество неизвестных:</label>
 
@@ -30,7 +28,7 @@
         <table id="matrixTable">
         </table>
 
-        <li> Eps = <input type="text" class="floatField" id="eps" name="eps" , value="0.001"> </li>
+        <li> Точность = <input type="text" class="floatField" id="eps" name="eps" , value="0.001"> </li>
     </ul>
 
     <button onclick='solve(convertMatrixTableToMatrix(
@@ -42,8 +40,7 @@
     <p id="answer"></p>
     <p id="errorField"></p>
 
-
-    <script type="text/javascript">
+<script type="text/javascript">
         buildMatrixTable(document.getElementById("nVariables").value,
             document.getElementById("matrixTable"),
             [
